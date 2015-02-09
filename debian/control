@@ -1,0 +1,22 @@
+Source: sigmavpn
+Section: net
+Priority: optional
+Maintainer: Shell.Xu <shell909090@gmail.com>
+Build-Depends: debhelper (>= 9), libsodium-dev (>= 1.0.0)
+Standards-Version: 3.9.6
+Homepage: https://code.google.com/p/sigmavpn/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/sigmavpn.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/sigmavpn.git;a=summary
+
+Package: sigmavpn
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: a light-weight VPN providing easy-to-configure and secure VPN tunnels
+ SigmaVPN is a light-weight VPN solution aimed at providing
+ easy-to-configure and secure VPN tunnels for UNIX systems.
+ .
+ * SigmaVPN is modular. It is very easy to create new interfaces and
+   encryption/encoding schemes.
+ * SigmaVPN is slim. It's just a few hundred lines of pure C.
+ * SigmaVPN is easy to configure, allowing you to put settings for
+   multiple tunnels into just one configuration file.
