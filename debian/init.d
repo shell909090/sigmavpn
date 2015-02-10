@@ -5,10 +5,7 @@
 # Required-Stop:     $local_fs $network $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: <Enter a short description of the software>
-# Description:       <Enter a long description of the software>
-#                    <...>
-#                    <...>
+# Short-Description: light-weight VPN providing easy-to-configure and secure VPN tunnels
 ### END INIT INFO
 
 # Author: Shell.Xu <shell909090@gmail.com>
@@ -19,7 +16,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="sigmavpn"
 NAME=sigmavpn
-DAEMON=/usr/sbin/sigmavpn
+DAEMON=/usr/bin/sigmavpn
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
@@ -49,9 +46,12 @@ do_start()
 	#   2 if daemon could not be started
 	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
 		|| return 1
-	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON -- \
-		$DAEMON_ARGS \
+	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --background \
+	    --no-close -m -- $DAEMON_ARGS >> $LOGFILE 2>&1 \
 		|| return 2
+	if [ -n "$INTERFACE" ]; then
+	    ifup "$INTERFACE"
+	fi
 	# The above code will not work for interpreted scripts, use the next
 	# six lines below instead (Ref: #643337, start-stop-daemon(8) )
 	#start-stop-daemon --start --quiet --pidfile $PIDFILE --startas $DAEMON \
@@ -76,6 +76,9 @@ do_stop()
 	#   1 if daemon was already stopped
 	#   2 if daemon could not be stopped
 	#   other if a failure occurred
+	if [ -n "$INTERFACE" ]; then
+	    ifdown "$INTERFACE"
+	fi
 	start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE --name $NAME
 	RETVAL="$?"
 	[ "$RETVAL" = 2 ] && return 2

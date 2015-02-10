@@ -8,3 +8,6 @@
 
 # Additional options that are passed to the Daemon.
 DAEMON_OPTS=""
+
+# set interface use by sigmavpn to run ifupdown at start/stop.
+INTERFACE=""
