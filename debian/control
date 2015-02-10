@@ -11,12 +11,12 @@ Homepage: https://code.google.com/p/sigmavpn/
 Package: sigmavpn
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: a light-weight VPN providing easy-to-configure and secure VPN tunnels
+Description: light-weight VPN providing easy-to-configure and secure VPN tunnels
  SigmaVPN is a light-weight VPN solution aimed at providing
  easy-to-configure and secure VPN tunnels for UNIX systems.
  .
- * SigmaVPN is modular. It is very easy to create new interfaces and
-   encryption/encoding schemes.
- * SigmaVPN is slim. It's just a few hundred lines of pure C.
- * SigmaVPN is easy to configure, allowing you to put settings for
-   multiple tunnels into just one configuration file.
+  * SigmaVPN is modular. It is very easy to create new interfaces and
+    encryption/encoding schemes.
+  * SigmaVPN is slim. It's just a few hundred lines of pure C.
+  * SigmaVPN is easy to configure, allowing you to put settings for
+    multiple tunnels into just one configuration file.
