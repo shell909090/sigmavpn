@@ -19,6 +19,7 @@ NAME=sigmavpn
 DAEMON=/usr/bin/sigmavpn
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
+LOGFILE=/var/log/$NAME.log
 SCRIPTNAME=/etc/init.d/$NAME
 
 # Exit if the package is not installed
