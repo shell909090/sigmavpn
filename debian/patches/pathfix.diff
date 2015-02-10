@@ -1,0 +1,48 @@
+Index: sigmavpn/main.c
+===================================================================
+--- sigmavpn.orig/main.c
++++ sigmavpn/main.c
+@@ -173,8 +173,8 @@ int main(int argc, const char** argv)
+     printf("SigmaVPN.\nCopyright (c) 2011 Neil Alexander T. All rights reserved.\n");
+ 
+     conf = malloc(sizeof(sigma_conf));
+-    strncpy(conf->modulepath, "/usr/local/lib/sigmavpn/", 128);
+-    strncpy(conf->configfile, "/usr/local/etc/sigmavpn.conf", 128);
++    strncpy(conf->modulepath, "/usr/lib/sigmavpn/", 128);
++    strncpy(conf->configfile, "/etc/sigmavpn.conf", 128);
+ 
+     int arg;
+ 
+Index: sigmavpn/sigmavpn.1
+===================================================================
+--- sigmavpn.orig/sigmavpn.1
++++ sigmavpn/sigmavpn.1
+@@ -19,24 +19,22 @@ at runtime:
+ .Bl -tag -width -indent
+ .It Fl c
+ Path to the configuration file. If not specified, the default
+-.Ar /usr/local/etc/sigmavpn.conf
++.Ar /etc/sigmavpn.conf
+ is assumed.
+ .It Fl m
+ Path to the module directory. If not specified, the default
+-.Ar /usr/local/lib/sigmavpn/
++.Ar /usr/lib/sigmavpn/
+ is assumed. 
+ .El
+ .Pp
+-                 
+ .Sh FILES
+-.Bl -tag -width "/usr/local/etc/sigmavpn.conf" -compact
+-.It Pa /usr/local/etc/sigmavpn.conf
++.Bl -tag -width "/etc/sigmavpn.conf" -compact
++.It Pa /etc/sigmavpn.conf
+ Configuration file. Information about tunnels are placed in this file.
+ .El
+ .Sh SEE ALSO
+ Google Code:
+ .Ar http://code.google.com/p/sigmavpn/
+-
+ Github:
+ .Ar http://github.com/neilalexander/sigmavpn/
+ .Sh AUTHOR
