@@ -1,3 +1,9 @@
+From: Shell Xu <shell909090@gmail.com>
+Subject: debianic path and remove empty line in manpages
+
+* main.c: debianic path.
+* sigmavpn.1: debianic path and empty line.
+
 Index: sigmavpn/main.c
 ===================================================================
 --- sigmavpn.orig/main.c

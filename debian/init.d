@@ -6,6 +6,7 @@
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: light-weight VPN providing easy-to-configure and secure VPN tunnels
+# Description:       SigmaVPN is a light-weight VPN solution aimed at providing easy-to-configure and secure VPN tunnels for UNIX systems.
 ### END INIT INFO
 
 # Author: Shell.Xu <shell909090@gmail.com>

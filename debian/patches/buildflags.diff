@@ -1,3 +1,8 @@
+From: Shell Xu <shell909090@gmail.com>
+Subject: Fix flags warnings
+
+* Makefile: Use CFLAGS and LDFLAGS.
+
 --- a/Makefile
 +++ b/Makefile
 @@ -5,7 +5,7 @@
