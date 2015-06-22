@@ -1,9 +1,7 @@
 sigmavpn for Debian
 -------------------
 
-<this file describes information about the source package, see Debian policy
-manual section 4.14. You WILL either need to modify or delete this file>
-
+Coming from https://github.com/neilalexander/sigmavpn.
 
 
  -- Shell.Xu <shell909090@gmail.com>  Tue, 10 Feb 2015 01:39:40 +0800
